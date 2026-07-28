@@ -1,0 +1,60 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-07-27",
+  "projects": [
+    {
+      "id": "traffic",
+      "name": "Smart Traffic System",
+      "one_liner": "Hệ thống giám sát & phân tích giao thông thời gian thực có AI — đồ án tốt nghiệp KHDL, ghép YOLOv8 + ByteTrack + OCR + ReAct Agent chạy multiprocessing 9-10 FPS trên CPU.",
+      "tags": ["computer-vision", "yolov8", "openvino", "multiprocessing", "fastapi", "mongodb", "langgraph", "gemini", "websocket"],
+      "has_public_repo": true,
+      "repo": "https://github.com/quyda2004/check",
+      "detail_index": "projects/traffic/full-index.md"
+    },
+    {
+      "id": "badminton",
+      "name": "BadmintonPro",
+      "one_liner": "Hệ thống đặt sân cầu lông thông minh có AI — chatbot tiếng Việt đặt/hủy sân qua hội thoại, kiến trúc microservice backend + ai-service tách biệt, native function calling Gemini.",
+      "tags": ["chatbot", "gemini", "function-calling", "microservices", "fastapi", "postgresql", "mongodb", "mcp", "docker", "jwt"],
+      "has_public_repo": true,
+      "repo": "https://github.com/quyda2004/AI_badminton",
+      "detail_index": "projects/badminton/full-index.md"
+    },
+    {
+      "id": "ai-coworker",
+      "name": "AI Co-Worker Engine",
+      "one_liner": "Multi-agent LangGraph mô phỏng đồng nghiệp AI (CEO/CHRO/Regional Manager + Mentor) với Supervisor+Director điều phối, EmotionalMemory, RAG FAISS riêng từng agent.",
+      "tags": ["multi-agent", "langgraph", "gemini", "rag", "faiss", "fastapi", "postgresql", "mongodb"],
+      "has_public_repo": true,
+      "repo": "https://github.com/quyda2004/AI_coworker",
+      "detail_index": "projects/ai-coworker/full-index.md"
+    },
+    {
+      "id": "ocr-financial-report",
+      "name": "OCR 9000 Báo cáo tài chính",
+      "one_liner": "Pipeline OCR + extract information cho 9000 báo cáo tài chính công ty — ResNet-18 sửa hướng ảnh, DeepSeek OCR, consensus 3 LLM (GPT-4o + Claude Haiku 4.5 + Claude 3.5) để đánh giá không cần label thủ công.",
+      "tags": ["ocr", "resnet-18", "deepseek-ocr", "llm-consensus", "gpt-4o", "claude", "table-evaluation"],
+      "has_public_repo": false,
+      "repo": null,
+      "detail_index": "projects/ocr-financial-report/full-index.md"
+    },
+    {
+      "id": "af-detection-ecg",
+      "name": "AF Detection từ tín hiệu ECG",
+      "one_liner": "Phát hiện rung nhĩ (Atrial Fibrillation) từ ECG theo 2 hướng song song: Device (CNN QRS + 7 feature + ML truyền thống) và Cloud (DeepCNN 24 lớp + BiLSTM), đạt chuẩn AAMI EC57.",
+      "tags": ["signal-processing", "ecg", "cnn", "bilstm", "af-detection", "aami-ec57", "on-device-ml"],
+      "has_public_repo": false,
+      "repo": null,
+      "detail_index": "projects/af-detection-ecg/full-index.md"
+    },
+    {
+      "id": "portfolio",
+      "name": "Portfolio Chatbot (chính dự án này)",
+      "one_liner": "Chatbot portfolio cá nhân với kiến trúc knowledge base 3 tầng — tách data khỏi source code (repo riêng qua GitHub raw), flow 3 lần gọi LLM (meta → candidate → detail), prompt caching để giữ chi phí thấp.",
+      "tags": ["rag", "prompt-caching", "knowledge-base", "tool-calling", "portfolio"],
+      "has_public_repo": false,
+      "repo": null,
+      "detail_index": "projects/portfolio/full-index.md"
+    }
+  ]
+}
