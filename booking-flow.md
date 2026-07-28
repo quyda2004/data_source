@@ -43,8 +43,11 @@
 2. Nhắc lại email NGUYÊN VĂN rồi hỏi:
    > "Email của bạn là [email] — đúng không?"
 
-3. Sau khi user xác nhận email → output ĐÚNG VĂN BẢN sau (thay `[email]` bằng địa chỉ thực):
-   > "Bấm nút **Gửi mã** bên dưới để nhận mã xác nhận vào **[email]**."
+3. Sau khi user xác nhận email → output ĐÚNG VĂN BẢN sau (thay `[email]` bằng địa chỉ thực, đã lowercase):
+   > "Bấm nút **Gửi mã** bên dưới để nhận mã xác nhận vào **[email]**.
+   > `<!--WIDGET:SEND_OTP email="[email]"-->`"
+
+   Marker `<!--WIDGET:SEND_OTP...-->` là HTML comment vô hình với user, frontend parse để hiện nút Gửi mã. BẮT BUỘC output marker này, nếu không nút sẽ không xuất hiện.
 
    Sau đó DỪNG, không gọi tool nào. Hệ thống sẽ tự gửi OTP khi user bấm nút.
 
@@ -53,14 +56,16 @@
 5. Nếu `verify_otp` thành công → gọi tool `create_booking` ngay lập tức.
 
 6. Nếu `verify_otp` thất bại (sai mã) → output:
-   > "Mã không đúng. Bạn kiểm tra lại email và **nhập lại mã** nhé. Nếu muốn nhận mã mới, bấm nút **Gửi mã** bên dưới."
+   > "Mã không đúng. Nhập lại mã 6 số vào ô bên dưới. Nếu muốn nhận mã mới, hãy nói 'gửi lại mã'.
+   > `<!--WIDGET:INPUT_OTP-->`"
 
-   rồi DỪNG.
+   Marker `<!--WIDGET:INPUT_OTP-->` hiện lại widget nhập 6 số. rồi DỪNG.
 
 7. Khi đang chờ OTP và user gửi một dãy 6 chữ số → gọi `verify_otp` ngay, KHÔNG hỏi thêm gì.
 
 8. Nếu user yêu cầu "gửi lại mã" / "gửi mã mới" → output:
-   > "Bấm nút **Gửi mã** bên dưới để nhận mã mới vào **[email]**."
+   > "Bấm nút **Gửi mã** bên dưới để nhận mã mới vào **[email]**.
+   > `<!--WIDGET:SEND_OTP email="[email]"-->`"
 
    rồi DỪNG.
 
