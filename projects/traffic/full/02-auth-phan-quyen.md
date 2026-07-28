@@ -2,7 +2,7 @@
 
 ## Xác thực & phân quyền — JWT HS256 + role_id
 
-**Source:** https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_auth.py · https://github.com/quyda2004/check/blob/main/backend/app/core/config.py · https://github.com/quyda2004/check/blob/main/backend/app/models/user.py
+**Source:** [backend/app/api/v1/api_auth.py](https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_auth.py) · [backend/app/core/config.py](https://github.com/quyda2004/check/blob/main/backend/app/core/config.py) · [backend/app/models/user.py](https://github.com/quyda2004/check/blob/main/backend/app/models/user.py)
 
 **Cấp token:** login OAuth2 password flow (`POST /api/v1/auth/login`) → backend băm bcrypt để verify → ký JWT thuật toán **HS256** với `JWT_SECRET` + `ACCESS_TOKEN_EXPIRE_DAYS` từ config. Payload chứa `sub = user_id` và `role_id`.
 

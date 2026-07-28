@@ -11,7 +11,7 @@
 
 ## 1. Vì sao mình làm dự án này (bối cảnh)
 
-**Source:** https://github.com/quyda2004/check/blob/main/README.md · https://github.com/quyda2004/check/blob/main/bao_cao_do_an.md
+**Source:** [README.md](https://github.com/quyda2004/check/blob/main/README.md) · [bao_cao_do_an.md](https://github.com/quyda2004/check/blob/main/bao_cao_do_an.md)
 
 Đây là **đồ án tốt nghiệp** (ngành Khoa học Dữ liệu, ĐH KHTN – ĐHQG TP.HCM). Ý tưởng xuất phát từ việc các demo Computer Vision giao thông trên mạng thường chỉ dừng ở một mảnh nhỏ: hoặc là đếm xe, hoặc là đo tốc độ, hoặc là detect biển số — chạy trong notebook, xem video một lần rồi thôi. Mình muốn ghép mọi thứ thành **một pipeline hoàn chỉnh chạy realtime trên web**: quay/mở nhiều video tuyến đường cùng lúc → phân tích liên tục → hiển thị lên dashboard → cho user hỏi bằng chatbot tiếng Việt như hỏi CSGT trực ban.
 
@@ -23,7 +23,7 @@ Về kỹ thuật, trung tâm là quyết định **mỗi tuyến đường ch�
 
 ## 2. Kiến trúc tổng thể — 3 khối
 
-**Source:** https://github.com/quyda2004/check/blob/main/backend/app/main.py · https://github.com/quyda2004/check/blob/main/frontend/vite.config.ts · https://github.com/quyda2004/check/blob/main/backend/app/db/base.py · https://github.com/quyda2004/check/blob/main/README.md
+**Source:** [backend/app/main.py](https://github.com/quyda2004/check/blob/main/backend/app/main.py) · [frontend/vite.config.ts](https://github.com/quyda2004/check/blob/main/frontend/vite.config.ts) · [backend/app/db/base.py](https://github.com/quyda2004/check/blob/main/backend/app/db/base.py) · [README.md](https://github.com/quyda2004/check/blob/main/README.md)
 
 Hệ thống gồm 3 khối chính — **cố ý không dùng API Gateway riêng** để giữ setup gọn cho demo đồ án.
 

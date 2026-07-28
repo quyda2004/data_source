@@ -10,7 +10,7 @@
 
 ## 1. Vì sao mình làm dự án này (bối cảnh)
 
-**Source:** https://github.com/quyda2004/AI_badminton/blob/main/README.md
+**Source:** [README.md](https://github.com/quyda2004/AI_badminton/blob/main/README.md)
 
 Ý tưởng xuất phát từ nhu cầu đời thường: đặt sân cầu lông qua form (chọn sân, ngày, giờ, bấm nút) tuy chạy được nhưng khô khan và nhiều bước. Mình muốn thử hướng khác — **đặt sân bằng hội thoại tiếng Việt tự nhiên**, kiểu nói chuyện với lễ tân: *"Đặt sân 1 ngày mai lúc 8h"*, *"Hủy sân 2 chiều nay giúp mình"* — hệ thống tự hiểu, tự tra, tự thực hiện.
 
@@ -22,7 +22,7 @@ Về kỹ thuật, xây theo **kiến trúc microservice**: phần nghiệp vụ
 
 ## 2. Kiến trúc tổng thể — 5 khối
 
-**Source:** https://github.com/quyda2004/AI_badminton/blob/main/docker-compose.yml · https://github.com/quyda2004/AI_badminton/blob/main/nginx/nginx.conf · https://github.com/quyda2004/AI_badminton/blob/main/architecture.tex · https://github.com/quyda2004/AI_badminton/blob/main/README.md
+**Source:** [docker-compose.yml](https://github.com/quyda2004/AI_badminton/blob/main/docker-compose.yml) · [nginx/nginx.conf](https://github.com/quyda2004/AI_badminton/blob/main/nginx/nginx.conf) · [architecture.tex](https://github.com/quyda2004/AI_badminton/blob/main/architecture.tex) · [README.md](https://github.com/quyda2004/AI_badminton/blob/main/README.md)
 
 Hệ thống gồm 5 khối chạy trong Docker Compose. Mọi request từ frontend đi qua **nginx làm API Gateway** trước, rồi nginx chia 2 nhánh.
 
@@ -54,7 +54,7 @@ mà không cần gọi lại backend để hỏi "token này của ai".
 
 ## 3. Cơ chế check trùng lịch đặt sân (overlap detection)
 
-**Source:** https://github.com/quyda2004/AI_badminton/blob/main/backend/api/bookings.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/api/courts.py
+**Source:** [backend/api/bookings.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/bookings.py) · [backend/api/courts.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/courts.py)
 
 Luật nghiệp vụ quan trọng nhất, dùng **chung một công thức** ở 3 chỗ.
 
@@ -85,7 +85,7 @@ mà để hiển thị. Lặp từng giờ 6h→22h (16 slot), mỗi giờ dùng
 
 ## 4. Hai database — vì sao tách PostgreSQL và MongoDB
 
-**Source:** https://github.com/quyda2004/AI_badminton/tree/main/backend/models · https://github.com/quyda2004/AI_badminton/blob/main/ai_service/database.py · https://github.com/quyda2004/AI_badminton/blob/main/docker-compose.yml
+**Source:** [backend/models](https://github.com/quyda2004/AI_badminton/tree/main/backend/models) · [ai_service/database.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/database.py) · [docker-compose.yml](https://github.com/quyda2004/AI_badminton/blob/main/docker-compose.yml)
 
 Quyết định "dùng đúng DB cho đúng loại dữ liệu":
 

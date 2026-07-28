@@ -2,7 +2,7 @@
 
 ## 1. RAG theo từng agent
 
-**Source:** https://github.com/quyda2004/AI_coworker/blob/main/app/engine/agents/base_agent.py · https://github.com/quyda2004/AI_coworker/blob/main/app/knowledge/retriever.py · https://github.com/quyda2004/AI_coworker/blob/main/app/db/vector/faiss_store.py · https://github.com/quyda2004/AI_coworker/blob/main/app/knowledge/ingest.py
+**Source:** [app/engine/agents/base_agent.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/agents/base_agent.py) · [app/knowledge/retriever.py](https://github.com/quyda2004/AI_coworker/blob/main/app/knowledge/retriever.py) · [app/db/vector/faiss_store.py](https://github.com/quyda2004/AI_coworker/blob/main/app/db/vector/faiss_store.py) · [app/knowledge/ingest.py](https://github.com/quyda2004/AI_coworker/blob/main/app/knowledge/ingest.py)
 
 Mỗi agent có **knowledge base riêng** qua FAISS, để chỉ lấy đúng context liên quan:
 - CEO → context về Group DNA, brand autonomy.
@@ -23,7 +23,7 @@ Mỗi agent có **knowledge base riêng** qua FAISS, để chỉ lấy đúng co
 
 ## 2. Function Calling — trạng thái thật
 
-**Source:** https://github.com/quyda2004/AI_coworker/blob/main/app/engine/tools.py · https://github.com/quyda2004/AI_coworker/blob/main/app/engine/agents/base_agent.py
+**Source:** [app/engine/tools.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/tools.py) · [app/engine/agents/base_agent.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/agents/base_agent.py)
 
 Dự án **có định nghĩa 5 business tool** trong `app/engine/tools.py`:
 

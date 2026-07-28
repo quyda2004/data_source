@@ -2,7 +2,7 @@
 
 ## 1. API Endpoints
 
-**Source:** https://github.com/quyda2004/AI_coworker/blob/main/app/api/routes/chat.py · https://github.com/quyda2004/AI_coworker/blob/main/app/api/routes/sessions.py · https://github.com/quyda2004/AI_coworker/blob/main/app/api/routes/health.py · https://github.com/quyda2004/AI_coworker/blob/main/app/main.py · https://github.com/quyda2004/AI_coworker/blob/main/app/api/middleware/safety.py
+**Source:** [app/api/routes/chat.py](https://github.com/quyda2004/AI_coworker/blob/main/app/api/routes/chat.py) · [app/api/routes/sessions.py](https://github.com/quyda2004/AI_coworker/blob/main/app/api/routes/sessions.py) · [app/api/routes/health.py](https://github.com/quyda2004/AI_coworker/blob/main/app/api/routes/health.py) · [app/main.py](https://github.com/quyda2004/AI_coworker/blob/main/app/main.py) · [app/api/middleware/safety.py](https://github.com/quyda2004/AI_coworker/blob/main/app/api/middleware/safety.py)
 
 | Method | Path | Mô tả |
 |---|---|---|
@@ -31,7 +31,7 @@
 
 ## 2. Test & Đánh giá — trạng thái thật
 
-**Source:** https://github.com/quyda2004/AI_coworker/tree/main/tests
+**Source:** [tests](https://github.com/quyda2004/AI_coworker/tree/main/tests)
 
 Dự án **có unit test** (pytest + pytest-asyncio), thư mục `tests/`:
 - `test_agents.py` — test persona registry.
@@ -46,7 +46,7 @@ Dự án **có unit test** (pytest + pytest-asyncio), thư mục `tests/`:
 
 ## 3. Stack công nghệ
 
-**Source:** https://github.com/quyda2004/AI_coworker/blob/main/requirements.txt · https://github.com/quyda2004/AI_coworker/blob/main/app/engine/cache.py · https://github.com/quyda2004/AI_coworker/blob/main/app/personas/traits.py
+**Source:** [requirements.txt](https://github.com/quyda2004/AI_coworker/blob/main/requirements.txt) · [app/engine/cache.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/cache.py) · [app/personas/traits.py](https://github.com/quyda2004/AI_coworker/blob/main/app/personas/traits.py)
 
 | Layer | Công nghệ |
 |---|---|

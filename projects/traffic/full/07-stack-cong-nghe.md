@@ -2,7 +2,7 @@
 
 ## Stack công nghệ
 
-**Source:** https://github.com/quyda2004/check/blob/main/backend/requirements_cpu.txt · https://github.com/quyda2004/check/blob/main/backend/requirements_gpu.txt · https://github.com/quyda2004/check/blob/main/frontend/package.json
+**Source:** [backend/requirements_cpu.txt](https://github.com/quyda2004/check/blob/main/backend/requirements_cpu.txt) · [backend/requirements_gpu.txt](https://github.com/quyda2004/check/blob/main/backend/requirements_gpu.txt) · [frontend/package.json](https://github.com/quyda2004/check/blob/main/frontend/package.json)
 
 | Layer | Công nghệ |
 |---|---|

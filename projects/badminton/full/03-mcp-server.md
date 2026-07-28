@@ -2,7 +2,7 @@
 
 ## MCP Server — tái sử dụng bộ tool
 
-**Source:** https://github.com/quyda2004/AI_badminton/blob/main/ai_service/mcp_server.py
+**Source:** [ai_service/mcp_server.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/mcp_server.py)
 
 Cùng bộ 6 tool đã dùng trong ai-service được wrap thành **MCP Server** (`FastMCP`) để
 Claude Desktop hoặc agent khác dùng chung, chạy độc lập bằng:

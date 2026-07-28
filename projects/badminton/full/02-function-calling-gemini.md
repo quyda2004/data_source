@@ -2,7 +2,7 @@
 
 ## 1. Xác thực & phân quyền — JWT liên service
 
-**Source:** https://github.com/quyda2004/AI_badminton/blob/main/backend/security.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/api/deps.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/api/auth.py · https://github.com/quyda2004/AI_badminton/blob/main/ai_service/router.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/config.py · https://github.com/quyda2004/AI_badminton/blob/main/ai_service/config.py
+**Source:** [backend/security.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/security.py) · [backend/api/deps.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/deps.py) · [backend/api/auth.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/auth.py) · [ai_service/router.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/router.py) · [backend/config.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/config.py) · [ai_service/config.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/config.py)
 
 **Cấp token:** `backend/security.py` băm mật khẩu bằng bcrypt và ký JWT thuật toán
 **HS256, hết hạn 60 phút**. Khi login thành công (`backend/api/auth.py`), backend nhét
@@ -27,7 +27,7 @@ forward xuống backend. Không gọi backend để xác thực.
 
 ## 2. Flow chính — Đặt sân bằng AI
 
-**Source:** https://github.com/quyda2004/AI_badminton/blob/main/ai_service/router.py · https://github.com/quyda2004/AI_badminton/blob/main/ai_service/gemini_client.py · https://github.com/quyda2004/AI_badminton/blob/main/ai_service/tools.py · https://github.com/quyda2004/AI_badminton/blob/main/ai_service/database.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/api/bookings.py
+**Source:** [ai_service/router.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/router.py) · [ai_service/gemini_client.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/gemini_client.py) · [ai_service/tools.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/tools.py) · [ai_service/database.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/database.py) · [backend/api/bookings.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/bookings.py)
 
 Luồng "demo tủ". Kịch bản: user nhắn **"Đặt sân 1 ngày mai lúc 8h"**.
 
@@ -81,7 +81,7 @@ frontend.
 
 ## 3. Bộ Tools & Function Calling (native Gemini)
 
-**Source:** https://github.com/quyda2004/AI_badminton/blob/main/ai_service/gemini_client.py · https://github.com/quyda2004/AI_badminton/blob/main/ai_service/tools.py
+**Source:** [ai_service/gemini_client.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/gemini_client.py) · [ai_service/tools.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/tools.py)
 
 Dùng **native function calling của Gemini**: 6 tool khai báo schema đầy đủ, Gemini
 **tự quyết định** gọi tool nào trong vòng lặp.
@@ -113,7 +113,7 @@ Dùng **native function calling của Gemini**: 6 tool khai báo schema đầy �
 
 ## 4. API Endpoints đầy đủ
 
-**Source:** https://github.com/quyda2004/AI_badminton/blob/main/backend/api/main.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/api/auth.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/api/courts.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/api/bookings.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/api/payments.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/api/admin.py · https://github.com/quyda2004/AI_badminton/blob/main/ai_service/router.py
+**Source:** [backend/api/main.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/main.py) · [backend/api/auth.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/auth.py) · [backend/api/courts.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/courts.py) · [backend/api/bookings.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/bookings.py) · [backend/api/payments.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/payments.py) · [backend/api/admin.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/admin.py) · [ai_service/router.py](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/router.py)
 
 **Backend (port 8000):**
 

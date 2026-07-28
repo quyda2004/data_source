@@ -2,7 +2,7 @@
 
 ## Chatbot AI — ReAct Agent tra cứu giao thông
 
-**Source:** https://github.com/quyda2004/check/blob/main/backend/app/services/chat_services/ChatBotAgent.py · https://github.com/quyda2004/check/blob/main/backend/app/services/chat_services/tool_func.py · https://github.com/quyda2004/check/blob/main/backend/app/services/chat_services/token_quota.py · https://github.com/quyda2004/check/blob/main/backend/app/utils/chatbot_utils.py · https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_chatbot.py
+**Source:** [backend/app/services/chat_services/ChatBotAgent.py](https://github.com/quyda2004/check/blob/main/backend/app/services/chat_services/ChatBotAgent.py) · [backend/app/services/chat_services/tool_func.py](https://github.com/quyda2004/check/blob/main/backend/app/services/chat_services/tool_func.py) · [backend/app/services/chat_services/token_quota.py](https://github.com/quyda2004/check/blob/main/backend/app/services/chat_services/token_quota.py) · [backend/app/utils/chatbot_utils.py](https://github.com/quyda2004/check/blob/main/backend/app/utils/chatbot_utils.py) · [backend/app/api/v1/api_chatbot.py](https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_chatbot.py)
 
 Chatbot là **single-agent + tool-calling** dùng LangGraph `create_react_agent`, LLM là Gemini (`gemini-2.5-flash` mặc định). **Không** phải multi-agent — chỉ 1 agent quyết định gọi tool nào từ 3 tool.
 
@@ -50,7 +50,7 @@ User → POST /api/v1/chat (kèm JWT)
 
 ## WebSocket streaming — 4 kênh realtime
 
-**Source:** https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_vehicles_frames.py · https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_admin.py · https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_chatbot.py
+**Source:** [backend/app/api/v1/api_vehicles_frames.py](https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_vehicles_frames.py) · [backend/app/api/v1/api_admin.py](https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_admin.py) · [backend/app/api/v1/api_chatbot.py](https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_chatbot.py)
 
 | WS endpoint | Payload | Nguồn | Tần suất |
 |---|---|---|---|
@@ -67,7 +67,7 @@ User → POST /api/v1/chat (kèm JWT)
 
 ## Bộ Tools của Chatbot & Function Calling
 
-**Source:** https://github.com/quyda2004/check/blob/main/backend/app/services/chat_services/tool_func.py · https://github.com/quyda2004/check/blob/main/backend/app/services/chat_services/ChatBotAgent.py
+**Source:** [backend/app/services/chat_services/tool_func.py](https://github.com/quyda2004/check/blob/main/backend/app/services/chat_services/tool_func.py) · [backend/app/services/chat_services/ChatBotAgent.py](https://github.com/quyda2004/check/blob/main/backend/app/services/chat_services/ChatBotAgent.py)
 
 Dùng **LangGraph `create_react_agent`** — không phải native function calling của Gemini, mà là abstraction của LangChain: LLM trả về tool call → agent invoke tool → nhét kết quả lại → LLM tổng hợp.
 

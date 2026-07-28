@@ -2,7 +2,7 @@
 
 ## RoadSetup runtime — chỉnh live không cần restart
 
-**Source:** https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_road_setups.py · https://github.com/quyda2004/check/blob/main/backend/app/services/road_services/road_setup_runtime.py
+**Source:** [backend/app/api/v1/api_road_setups.py](https://github.com/quyda2004/check/blob/main/backend/app/api/v1/api_road_setups.py) · [backend/app/services/road_services/road_setup_runtime.py](https://github.com/quyda2004/check/blob/main/backend/app/services/road_services/road_setup_runtime.py)
 
 Đây là feature "vận hành viên chỉnh vùng ROI + vạch dừng ngay trên UI" — quan trọng vì mỗi camera lắp mỗi góc, không thể hard-code.
 
@@ -28,7 +28,7 @@
 
 ## Ghi dữ liệu xuống MongoDB — chỗ INSERT thật sự
 
-**Source:** https://github.com/quyda2004/check/blob/main/backend/app/db/base.py · https://github.com/quyda2004/check/blob/main/backend/app/models/ · https://github.com/quyda2004/check/blob/main/backend/app/services/road_services/violation_sync.py · https://github.com/quyda2004/check/blob/main/backend/alembic/
+**Source:** [backend/app/db/base.py](https://github.com/quyda2004/check/blob/main/backend/app/db/base.py) · [backend/app/models/](https://github.com/quyda2004/check/blob/main/backend/app/models/) · [backend/app/services/road_services/violation_sync.py](https://github.com/quyda2004/check/blob/main/backend/app/services/road_services/violation_sync.py) · [backend/alembic/](https://github.com/quyda2004/check/blob/main/backend/alembic/)
 
 Toàn bộ dữ liệu chính chạy trên **MongoDB (Motor + Beanie 2.1)**. Beanie là ODM async — model kế thừa `Document`, thao tác `.insert()` / `.save()` / `.find_one()` giống mongoose.
 
@@ -58,7 +58,7 @@ Toàn bộ dữ liệu chính chạy trên **MongoDB (Motor + Beanie 2.1)**. Bea
 
 ## API Endpoints đầy đủ
 
-**Source:** https://github.com/quyda2004/check/blob/main/backend/app/main.py · https://github.com/quyda2004/check/blob/main/backend/app/api/v1/
+**Source:** [backend/app/main.py](https://github.com/quyda2004/check/blob/main/backend/app/main.py) · [backend/app/api/v1/](https://github.com/quyda2004/check/blob/main/backend/app/api/v1/)
 
 **Backend (port 8000), tất cả prefix `/api/v1`:**
 

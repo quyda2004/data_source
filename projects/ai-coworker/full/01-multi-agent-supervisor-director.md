@@ -4,7 +4,7 @@
 
 ## 1. Vì sao mình làm dự án này (bối cảnh)
 
-**Source:** https://github.com/quyda2004/AI_coworker/blob/main/README.md
+**Source:** [README.md](https://github.com/quyda2004/AI_coworker/blob/main/README.md)
 
 Hồi mình còn intern bên ITR, mình được các anh support rất nhiều. Nhưng có một vấn đề: vì mình còn là "trang giấy trắng" nên hỏi khá nhiều, mà mỗi lần hỏi thì các anh đang làm việc dễ bị ngắt mạch (break mood), còn mình thì cũng ngại hỏi dồn. Từ đó mình nghĩ: có cách nào tạo một "đồng nghiệp AI" để giải quyết đúng cái khoảng trống đó không — một chỗ để hỏi mà không sợ làm phiền ai, lại vẫn được định hướng đàng hoàng.
 
@@ -22,7 +22,7 @@ Sau đó mình tình cờ thấy đề bài training trainee của **Gucci Group
 
 ## 2. Kiến trúc điều phối (Supervisor + Director)
 
-**Source:** https://github.com/quyda2004/AI_coworker/blob/main/app/engine/supervisor.py · https://github.com/quyda2004/AI_coworker/blob/main/app/engine/director.py · https://github.com/quyda2004/AI_coworker/blob/main/app/engine/graph.py · https://github.com/quyda2004/AI_coworker/blob/main/app/personas/prompts.py
+**Source:** [app/engine/supervisor.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/supervisor.py) · [app/engine/director.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/director.py) · [app/engine/graph.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/graph.py) · [app/personas/prompts.py](https://github.com/quyda2004/AI_coworker/blob/main/app/personas/prompts.py)
 
 Hệ thống dùng **LangGraph** với mô hình điều phối 2 lớp.
 
@@ -58,7 +58,7 @@ Mentor chỉ cho **gợi ý ngắn (1–3 câu)** dựa trên tiến độ, **kh
 
 ## 3. Cơ chế Stuck (chi tiết + trường hợp mình từng thắc mắc)
 
-**Source:** https://github.com/quyda2004/AI_coworker/blob/main/app/engine/director.py
+**Source:** [app/engine/director.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/director.py)
 
 `detect_progress()` quét **5 tin nhắn gần nhất**, so với bảng `PROGRESS_SIGNALS` (8 task → danh sách keyword). Điểm mấu chốt:
 
@@ -75,7 +75,7 @@ Mentor chỉ cho **gợi ý ngắn (1–3 câu)** dựa trên tiến độ, **kh
 
 ## 4. Cơ chế cảm xúc — 2 tầng khác nhau
 
-**Source:** https://github.com/quyda2004/AI_coworker/blob/main/app/engine/state.py · https://github.com/quyda2004/AI_coworker/blob/main/app/engine/director.py · https://github.com/quyda2004/AI_coworker/blob/main/app/engine/agents/ceo_agent.py · https://github.com/quyda2004/AI_coworker/blob/main/app/engine/agents/chro_agent.py · https://github.com/quyda2004/AI_coworker/blob/main/app/engine/agents/regional_agent.py
+**Source:** [app/engine/state.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/state.py) · [app/engine/director.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/director.py) · [app/engine/agents/ceo_agent.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/agents/ceo_agent.py) · [app/engine/agents/chro_agent.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/agents/chro_agent.py) · [app/engine/agents/regional_agent.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/agents/regional_agent.py)
 
 Đây là chỗ dễ nói lẫn, cần phân biệt rõ:
 
@@ -106,7 +106,7 @@ Chỉ **3 agent** (CEO, CHRO, RegionalManager) mới có. Mentor và SafetyBlock
 
 ## 5. LangGraph — bao nhiêu node?
 
-**Source:** https://github.com/quyda2004/AI_coworker/blob/main/app/engine/graph.py
+**Source:** [app/engine/graph.py](https://github.com/quyda2004/AI_coworker/blob/main/app/engine/graph.py)
 
 Graph có đúng **7 node**:
 

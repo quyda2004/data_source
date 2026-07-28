@@ -2,7 +2,7 @@
 
 ## Test & Seed data — trạng thái thật
 
-**Source:** https://github.com/quyda2004/check/tree/main/backend/tests · https://github.com/quyda2004/check/blob/main/backend/seed.py
+**Source:** [backend/tests](https://github.com/quyda2004/check/tree/main/backend/tests) · [backend/seed.py](https://github.com/quyda2004/check/blob/main/backend/seed.py)
 
 **Test hiện tại (`backend/tests/`):**
 - `test_api.py` — **trống** (placeholder).

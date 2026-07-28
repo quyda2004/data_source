@@ -2,7 +2,7 @@
 
 ## 1. Ghi dữ liệu xuống PostgreSQL — chỗ INSERT thật sự
 
-**Source:** https://github.com/quyda2004/AI_badminton/blob/main/backend/api/bookings.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/api/deps.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/config.py
+**Source:** [backend/api/bookings.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/bookings.py) · [backend/api/deps.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/api/deps.py) · [backend/config.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/config.py)
 
 Phân biệt rõ: **ai-service không ghi DB**, chỉ gọi HTTP. Chỗ ghi thật ở backend, cụ
 thể ở `db.commit()`.
@@ -29,7 +29,7 @@ thể ở `db.commit()`.
 
 ## 2. Stack công nghệ
 
-**Source:** https://github.com/quyda2004/AI_badminton/blob/main/backend/requirements.txt · https://github.com/quyda2004/AI_badminton/blob/main/ai_service/requirements.txt · https://github.com/quyda2004/AI_badminton/blob/main/requirements-dev.txt · https://github.com/quyda2004/AI_badminton/blob/main/docker-compose.yml
+**Source:** [backend/requirements.txt](https://github.com/quyda2004/AI_badminton/blob/main/backend/requirements.txt) · [ai_service/requirements.txt](https://github.com/quyda2004/AI_badminton/blob/main/ai_service/requirements.txt) · [requirements-dev.txt](https://github.com/quyda2004/AI_badminton/blob/main/requirements-dev.txt) · [docker-compose.yml](https://github.com/quyda2004/AI_badminton/blob/main/docker-compose.yml)
 
 | Layer | Công nghệ |
 |---|---|
@@ -56,7 +56,7 @@ thể ở `db.commit()`.
 
 ## 3. Test & Seed data — trạng thái thật
 
-**Source:** https://github.com/quyda2004/AI_badminton/tree/main/tests · https://github.com/quyda2004/AI_badminton/blob/main/backend/scripts/seed.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/scripts/reset_db.py · https://github.com/quyda2004/AI_badminton/blob/main/backend/scripts/check.py
+**Source:** [tests](https://github.com/quyda2004/AI_badminton/tree/main/tests) · [backend/scripts/seed.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/scripts/seed.py) · [backend/scripts/reset_db.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/scripts/reset_db.py) · [backend/scripts/check.py](https://github.com/quyda2004/AI_badminton/blob/main/backend/scripts/check.py)
 
 **Có unit test** (pytest), thư mục `tests/` với `conftest.py` reset + seed DB sạch
 trước khi chạy:

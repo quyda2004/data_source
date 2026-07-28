@@ -55,11 +55,19 @@
 
 5. Nếu `verify_otp` thành công → gọi tool `create_booking` ngay lập tức.
 
-6. Nếu `verify_otp` thất bại (sai mã) → output:
+6. Nếu `verify_otp` thất bại, PHẢI phân biệt 2 trường hợp dựa trên `error` message:
+
+   **6a. Sai mã** (error chứa `"không đúng"`) → output:
    > "Mã không đúng. Nhập lại mã 6 số vào ô bên dưới. Nếu muốn nhận mã mới, hãy nói 'gửi lại mã'.
    > `<!--WIDGET:INPUT_OTP-->`"
 
-   Marker `<!--WIDGET:INPUT_OTP-->` hiện lại widget nhập 6 số. rồi DỪNG.
+   Marker `INPUT_OTP` hiện lại widget nhập 6 số. Rồi DỪNG.
+
+   **6b. Mã hết hạn / không tồn tại** (error chứa `"không tồn tại"` hoặc `"hết hạn"`) → output (thay `[email]` bằng địa chỉ user):
+   > "Mã đã hết hạn. Bấm nút **Gửi mã** bên dưới để nhận mã mới vào **[email]**.
+   > `<!--WIDGET:SEND_OTP email="[email]"-->`"
+
+   Marker `SEND_OTP` tự động hiện lại nút Gửi mã. Rồi DỪNG.
 
 7. Khi đang chờ OTP và user gửi một dãy 6 chữ số → gọi `verify_otp` ngay, KHÔNG hỏi thêm gì.
 
