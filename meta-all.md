@@ -171,30 +171,40 @@ cho DCNN+BiLSTM 4-class.
 
 ## 6. Portfolio Chatbot (`portfolio`)
 
-**Bối cảnh:** Chính dự án chatbot đang xây — trả lời câu hỏi về 5 dự án trên
-bằng knowledge base có kiến trúc retrieval nhiều tầng.
+**Bối cảnh:** Chính dự án chatbot đang xây — trả lời câu hỏi về 5 dự án trên +
+đặt/hủy/dời lịch meeting thật qua Cal.com. Có 2 file chi tiết:
+`01-kien-truc-retrieval.md` (design) và `02-backend-va-deployment.md` (thực tế
+đã build, gồm backend + Docker + booking).
 
-**Kiến trúc data:** tách data khỏi source (repo `portfolio-knowledge-base` riêng),
-app fetch qua `raw.githubusercontent.com` lúc runtime + cache Redis/in-memory
-TTL vài chục phút → thêm/sửa dự án **không cần redeploy**. Optional gắn GitHub
-Webhook để invalidate cache tự động.
+**Kiến trúc runtime:** 2 container Docker Compose — **nginx** (port 80, serve
+HTML tĩnh + reverse proxy `/api/*` sang backend, `proxy_buffering off` cho SSE)
++ **backend** FastAPI (không expose port, chỉ nginx thấy được). Nginx đứng
+trước để ẩn `ANTHROPIC_API_KEY` server-side (browser không thấy key).
 
-**Kiến trúc folder đồng bộ:** mọi dự án dùng chung format `full-index.md` + folder
-`full/*.md`. Dự án ngắn có 1-2 file, dài (traffic) có 8 file — code xử lý giống
-nhau cho mọi dự án. `index.json` + `meta-all.md` + `skills-map.md` +
-`skill-detail.md` là 4 file tĩnh nạp thẳng vào system prompt.
+**Kiến trúc data:** tách data khỏi source (repo `quyda2004/data_source` riêng),
+app fetch qua `raw.githubusercontent.com` + cache in-memory TTL 10 phút → thêm
+/sửa dự án **không cần redeploy**. Reload 3 tầng: GitHub webhook (HMAC verify,
+instant, async reload) + periodic refresh mỗi 15 phút + endpoint
+`/admin/reload-knowledge` (có RELOAD_KEY guard).
 
-**Flow 3 lần gọi LLM (thô → tinh):** Call 1 với meta → LLM gọi tool
-`list_candidate_sections(project_ids, question)` → server đọc `full-index.md`,
-rank sơ bộ, trả top 2-3 candidate CHỈ với preview. Call 2 LLM chọn file → gọi
-`get_section(project_id, filename)` → server fetch đúng 1 file. Call 3 LLM tổng
-hợp trả lời cuối.
+**Kiến trúc folder đồng bộ:** mọi dự án dùng chung format `full-index.md` +
+folder `full/*.md`. Static knowledge nạp 3 file (không phải 4 như design gốc):
+`personal.md` + `booking-flow.md` + `index.json`. `meta-all.md` không nạp thẳng,
+thay bằng tool `get_project_meta(project_id)` gọi khi user hỏi cụ thể — tiết
+kiệm token cho câu ngắn.
 
-**Tối ưu chi phí:** prompt caching `cache_control: ephemeral` cho phần tĩnh
-(`index.json + meta-all.md + skill-detail.md`) → call 2, 3 tính cache-read thay
-vì full input price. Tool nhận `project_ids: list[str]` (không phải 1 id đơn) để
-so sánh nhiều dự án không đội thêm vòng gọi.
+**Agentic loop `/api/chat`:** gọi thẳng REST Anthropic (không dùng SDK), model
+`claude-haiku-4-5`, max 6 vòng tool_use. 11 tool tất cả: 6 booking (Cal.com API
+v2 — `get_available_slots`, `create_booking`, `cancel_booking`,
+`reschedule_booking`, `get_booking`, `verify_otp`) + 5 knowledge fetch
+(`get_project_meta`, `get_project_chunk`, ...). Text cuối stream ra client qua
+SSE.
 
-**Guardrail:** không ép cứng dừng ở 3 lần — set max 5 tool call/câu hỏi ở tầng
-hệ thống để tránh loop vô hạn khi bug, nhưng cho phép LLM gọi thêm khi thật sự
-cần đào sâu.
+**Booking anti-abuse — OTP email:** trước khi `create_booking`, user phải verify
+OTP 6 số gửi qua Gmail SMTP (TTL 5 phút). Server enforce `_otp_verified[email]`
+phải có trong 120s tại thời điểm gọi `create_booking`, không thì từ chối. OTP
+store là 2 dict Python in-memory (không cần Redis vì 1 instance backend).
+
+**Tối ưu chi phí:** prompt caching `cache_control: ephemeral` cho
+`_STATIC_KNOWLEDGE` → call 2 trở đi tính cache-read (rẻ ~10x). Block "now" tách
+riêng khỏi cache để timestamp luôn mới.

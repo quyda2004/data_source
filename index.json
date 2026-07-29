@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "updated_at": "2026-07-27",
+  "version": "1.1",
+  "updated_at": "2026-07-29",
   "projects": [
     {
       "id": "traffic",
@@ -50,8 +50,8 @@
     {
       "id": "portfolio",
       "name": "Portfolio Chatbot (chính dự án này)",
-      "one_liner": "Chatbot portfolio cá nhân với kiến trúc knowledge base 3 tầng — tách data khỏi source code (repo riêng qua GitHub raw), flow 3 lần gọi LLM (meta → candidate → detail), prompt caching để giữ chi phí thấp.",
-      "tags": ["rag", "prompt-caching", "knowledge-base", "tool-calling", "portfolio"],
+      "one_liner": "Chatbot portfolio cá nhân + đặt lịch Cal.com có OTP email — knowledge base tách repo qua GitHub raw, agentic loop max 6 vòng (Claude Haiku 4.5), 2 container Docker (nginx + FastAPI), reload 3 tầng (webhook + periodic + admin), prompt caching giữ chi phí thấp.",
+      "tags": ["rag", "prompt-caching", "knowledge-base", "tool-calling", "anthropic-claude", "fastapi", "docker", "nginx", "cal.com", "otp-email", "sse-streaming", "portfolio"],
       "has_public_repo": false,
       "repo": null,
       "detail_index": "projects/portfolio/full-index.md"
